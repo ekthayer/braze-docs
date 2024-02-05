@@ -10,7 +10,7 @@ page_order: 2.3
 
 > Cet article de référence couvre les différentes erreurs et réponses du serveur qui peuvent apparaître lors de l'utilisation de l'API Braze et comment les résoudre. 
 
-‹#›
+{% raw %}
 
 ## Réponses du serveur
 
@@ -64,36 +64,36 @@ L'élément de code d'état d'une réponse serveur est un nombre à 3 chiffres o
 
 Les codes d'état suivants et les messages d'erreur associés seront retournés si votre demande rencontre une erreur fatale.
 
-‹#›
-‹#›
+{% endraw %}
+{% alert warning %}
 Tous les codes d'erreur suivants indiquent qu'aucun message ne sera envoyé.
-‹#›
-‹#›
+{% endalert %}
+{% raw %}
 
 | Code d'erreur | Description |
 |---|---|
-| ‹#› | **Vous devriez réessayer votre demande avec un recul exponentiel.**|
-| ‹#› | Mauvaise syntaxe.|
-| ‹#› | Il n'y a pas d'identifiants externes ou de segments ou pas de jetons push dans la requête.|
-| ‹#› | Aucune campagne d'API de messagerie n'a été trouvée pour l'ID de campagne que vous avez fourni.|
-| ‹#› | Vous fournissez un ID de campagne mais aucun ID de variation de message.|
-| ‹#› | Vous avez fourni un ID de campagne valide, mais l'ID de variation de message ne correspond à aucun des messages de cette campagne.|
-| ‹#› | Vous avez fourni une variation de message du mauvais type de message pour au moins un de vos messages.|
-| ‹#› | Vous fournissez la clé de `extra` pour `apple_push` ou `android_push` mais ce n'est pas un dictionnaire.|
-| ‹#› | Provoqué par l'appel à plus de 75 ID externes lors de l'accès au point de terminaison `/users/track`.|
-| ‹#› | Causé par l'appel de plus de 50 ID externes.|
-| ‹#› | Causé par l'appel à plus de 50 identifiants externes.|
-| ‹#› | Aucune charge utile n'est spécifiée pour le message.|
-| ‹#› | Le message Slideup contient plus de 140 caractères.|
-| ‹#› | La charge utile JSON est de plus de 1 912 octets.|
-| ‹#› | La charge utile JSON est de plus de 4 000 octets.|
-| ‹#› | Impossible d'analyser send_at datetime.|
-| ‹#› | Dans votre demande, la `in_local_time` est vraie mais la `time` est passée dans le fuseau horaire de votre entreprise.|
-| ‹#› | Clé API invalide.|
-| ‹#› | Le plan tarifaire ne prend pas en charge ou le compte est autrement inactivé.|
-| ‹#› | La clé REST API que vous utilisez ne dispose pas des autorisations suffisantes, vérifiez les autorisations de clé API dans la Braze Developer Console.|
-| ‹#› | Clé d'API REST inconnue.|
-| ‹#› | Hors limite de taux.|
-‹#›
+| `5XX Internal Server Error` | **Vous devriez réessayer votre demande avec un recul exponentiel.**|
+| `400 Bad Request` | Mauvaise syntaxe.|
+| `400 No Recipients` | Il n'y a pas d'identifiants externes ou de segments ou pas de jetons push dans la requête.|
+| `400 Invalid Campaign ID` | Aucune campagne d'API de messagerie n'a été trouvée pour l'ID de campagne que vous avez fourni.|
+| `400 Message Variant Unspecified` | Vous fournissez un ID de campagne mais aucun ID de variation de message.|
+| `400 Invalid Message Variant` | Vous avez fourni un ID de campagne valide, mais l'ID de variation de message ne correspond à aucun des messages de cette campagne.|
+| `400 Mismatched Message Type` | Vous avez fourni une variation de message du mauvais type de message pour au moins un de vos messages.|
+| `400 Invalid Extra Push Payload` | Vous fournissez la clé de `extra` pour `apple_push` ou `android_push` mais ce n'est pas un dictionnaire.|
+| `400 Max Input Length Exceeded` | Provoqué par l'appel à plus de 75 ID externes lors de l'accès au point de terminaison `/users/track`.|
+| `400 The max number of external_ids and aliases per request was exceeded` | Causé par l'appel de plus de 50 ID externes.|
+| `400 The max number of ids per request was exceeded` | Causé par l'appel à plus de 50 identifiants externes.|
+| `400 No message to send` | Aucune charge utile n'est spécifiée pour le message.|
+| `400 Slideup Message Length Exceeded` | Le message Slideup contient plus de 140 caractères.|
+| `400 Apple Push Length Exceeded` | La charge utile JSON est de plus de 1 912 octets.|
+| `400 Android Push Length Exceeded` | La charge utile JSON est de plus de 4 000 octets.|
+| `400 Bad Request` | Impossible d'analyser send_at datetime.|
+| `400 Bad Request` | Dans votre demande, la `in_local_time` est vraie mais la `time` est passée dans le fuseau horaire de votre entreprise.|
+| `401 Unauthorized` | Clé API invalide.|
+| `403 Forbidden` | Le plan tarifaire ne prend pas en charge ou le compte est autrement inactivé.|
+| `403 Access Denied` | La clé REST API que vous utilisez ne dispose pas des autorisations suffisantes, vérifiez les autorisations de clé API dans la Braze Developer Console.|
+| `404 Not Found` | Clé d'API REST inconnue.|
+| `429 Rate Limited` | Hors limite de taux.|
+{: .reset-td-br-1 .reset-td-br-2}
 
-‹#›
+{% endraw %}
