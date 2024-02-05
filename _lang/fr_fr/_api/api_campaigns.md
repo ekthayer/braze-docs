@@ -20,9 +20,9 @@ Tu enverras ensuite ces informations à ton équipe de développement pour qu'el
 
 Une fois la campagne commencée, tu peux consulter les résultats dans le tableau de bord. Les campagnes API utilisent les [API de messagerie de]({{site.baseurl}}/api/endpoints/messaging/) Braze, qui disposent des mêmes options de rapports détaillés et de reciblage que les campagnes créées entièrement via le tableau de bord.
 
-‹#›
+{% alert warning %}
 Comme les campagnes API sont généralement transactionnelles, tous les utilisateurs sont éligibles pour les campagnes API, même ceux qui font partie de ton groupe de contrôle global.
-‹#›
+{% endalert %}
 
 ## Créer une nouvelle campagne
 
